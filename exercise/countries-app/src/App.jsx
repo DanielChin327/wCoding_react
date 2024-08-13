@@ -1,26 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
   const countries = ['US', 'Japan', 'South Korea', 'China'];
+  const [selectedCountry, setSelectedCountry] = useState(null);
+
+  const handleCountryClick = (country) => {
+    setSelectedCountry(country);
+  };
 
   return (
     <>
-    <div className="App">
-      <h1>Hover Over the Countries</h1>
-      <ul>
-        {countries.map((country, index) => (
-          <li key={index} className="country">
-            {country}
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className="App">
+        <h1>Hover Over the Countries</h1>
+        <ul>
+          {countries.map((country, index) => (
+            <li
+              key={index}
+              className={`country ${selectedCountry === country ? 'selected' : ''}`}
+              onClick={() => handleCountryClick(country)}
+            >
+              {country}
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
 
 export default App;
+
 
 // country -> element
 // index -> index of array
