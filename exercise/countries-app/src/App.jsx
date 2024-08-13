@@ -14,15 +14,22 @@ function App() {
       <div className="App">
         <h1>Hover Over the Countries</h1>
         <ul>
-          {countries.map((country, index) => (
-            <li
-              key={index}
-              className={`country ${selectedCountry === country ? 'selected' : ''}`}
-              onClick={() => handleCountryClick(country)}
-            >
-              {country}
-            </li>
-          ))}
+        {countries.map((country, index) => {
+            let className = 'country';
+            if (selectedCountry === country) {
+              className += ' selected';
+            }
+
+            return (
+              <li
+                key={index}
+                className={className}
+                onClick={() => handleCountryClick(country)}
+              >
+                {country}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>
