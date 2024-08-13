@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './App.css'; //styling
-
-
+import './App.css';
+import TaskList from './components/TaskList';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -27,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>To-Do List</h1>
+      <h1>To-Do List Made With React</h1>
       <input
         type="text"
         value={newTask}
@@ -35,29 +34,9 @@ function App() {
         placeholder="Add a new task"
       />
       <button onClick={addTask}>Add Task</button>
-      <ul>
-        {tasks.map((task, index) => (
-          <li
-            key={index}
-            style={{ textDecoration: task.isCompleted ? 'line-through' : 'none' }}
-            onClick={() => toggleComplete(index)}
-          >
-            {task.text}
-            <button onClick={() => deleteTask(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <TaskList tasks={tasks} toggleComplete={toggleComplete} deleteTask={deleteTask} />
     </div>
   );
 }
 
 export default App;
-
-
-
-
-// useState is a hook that lets you add React state to functional components.
-// We maintain two states: tasks for the list of tasks, and newTask for the input value.
-// addTask adds a new task to the list.
-// toggleComplete toggles the completion state of a task (crosses it out when clicked).
-// deleteTask removes a task from the list.
