@@ -1,4 +1,4 @@
-
+import React from 'react'
 import Lightbulb from './components/Lightbulb'
 import './App.css'
 
@@ -12,3 +12,5 @@ function App() {
     </>
   )
 }
+
+export default App;
