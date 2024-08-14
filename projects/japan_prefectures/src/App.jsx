@@ -4,14 +4,12 @@ import './App.css'
 
 function App() {
   return (
-    <div className = "prefecture-buttons">
-      <button className = "region-button">Honshu</button>
-      <button className = "region-button">Hokkaido</button>
-      <button className = "region-button">Shikoku</button>
-      <button className = "region-button">Kyushu</button>
+    <div className = "island-buttons">
+      <button className = "island-button">Honshu</button>
+      <button className = "island-button">Hokkaido</button>
+      <button className = "island-button">Shikoku</button>
+      <button className = "island-button">Kyushu</button>
     </div>
-
-
   )
 
 }
