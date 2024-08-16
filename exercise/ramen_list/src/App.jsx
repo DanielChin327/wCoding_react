@@ -1,8 +1,7 @@
 import {useState} from 'react'
 import './App.css'
-import Button from './assets/Button'
-import RamenList from './assets/RamenList';
-
+import Button from './assets/components/Button'
+import RamenList from './assets/components/RamenList'
 
 function App() {
   const [showRamen, setShowRamen] = useState(false);
