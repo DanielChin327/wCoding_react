@@ -1,5 +1,6 @@
 
 import './App.css'
+import {useState} from 'react'
 import Button from './assets/Button/Button'
 import List from './assets/List/List'
 
@@ -13,9 +14,9 @@ function App() {
 
   return (
     <div className = "container">
-      <h2>Countries I had visited</h2>
-
-
+      <h2>Countries I had visited: </h2>
+      <Button onClick = {handleList}></Button>
+      {list && <List/>}
     </div>
   )
 }
