@@ -22,6 +22,10 @@ const Counter = () => {
   const reset = () => {
     setCount(0)
   }
+
+  const flip = () => {
+    setCount(count * -1)
+  }
   return (
 
     <div>
@@ -30,15 +34,11 @@ const Counter = () => {
         <button onClick = {countDown}>-</button>
         <button onClick = {countDouble}>x2</button>
         <button onClick = {countHalf}>/2</button>
+        <button onClick = {flip}>+-</button>
         <button onClick = {reset}>Reset</button>
     </div>
 
   )
-
-
-
-
 }
-
 
 export default Counter;
